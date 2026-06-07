@@ -1,0 +1,105 @@
+---
+name: Bug 报告 (Bug Report)
+description: 报告一个 Bug 或异常行为
+title: "[Bug] "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间报告 Bug！请填写以下信息，帮助我们快速定位和修复问题。🐛
+
+  - type: input
+    id: os
+    attributes:
+      label: 🖥️ 操作系统
+      description: 你使用的操作系统
+      placeholder: "例如：Windows 11 / macOS Sonoma / Ubuntu 22.04"
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: 🐍 Python 版本
+      description: 你使用的 Python 版本
+      placeholder: "例如：3.13.12"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 📦 项目版本
+      description: 你使用的 AI Daily Digest 版本（或 commit hash）
+      placeholder: "例如：1.0.0 或 8e96180"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📋 问题描述
+      description: 清晰、简洁地描述遇到的 Bug
+      placeholder: "例如：运行 rss_fetch.py 时，某些 RSS 源无法抓取，报错：..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 🔄 复现步骤
+      description: 一步步说明如何复现这个 Bug
+      placeholder: |
+        1. 运行命令 `python scripts/rss_fetch.py --hours 24`
+        2. 等待抓取完成
+        3. 观察到错误：...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ 预期行为
+      description: 你期望的正确行为是什么
+      placeholder: "例如：所有 RSS 源都应该成功抓取，或显示清晰的错误提示"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ 实际行为
+      description: 实际发生了什么（与预期不符的地方）
+      placeholder: "例如：程序崩溃，报错：TimeoutError"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📄 日志/错误信息
+      description: 粘贴完整的错误日志或截图（如果有）
+      placeholder: |
+        ```
+        在此粘贴错误日志
+        ```
+        或上传截图
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📎 其他信息
+      description: 任何其他有助于解决问题的信息
+      placeholder: "例如：只有特定的 RSS 源有问题，或只在特定网络环境下出现"
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✅ 确认
+      options:
+        - label: 我已搜索现有的 Issue，确认这个问题没有被报告过
+          required: true
+        - label: 我已阅读并遵守 [行为准则](https://github.com/huangds/ai-daily-digest/blob/main/CODE_OF_CONDUCT.md)
+          required: true

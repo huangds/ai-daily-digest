@@ -1,0 +1,69 @@
+---
+name: 问题咨询 (Question)
+description: 提出问题或请求帮助
+title: "[Question] "
+labels: ["question"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        有疑问？请填写以下信息，我们会尽快帮助你。❓
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: 📋 问题类型
+      description: 你的问题属于哪种类型？
+      options:
+        - 安装/配置问题
+        - 使用问题
+        - API 配置问题
+        - RSS 源问题
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: ❓ 你的问题
+      description: 清晰、详细地描述你的问题
+      placeholder: "例如：配置 Gemini API Key 后，运行 rss_digest.py 仍然报错：..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: 🔧 已尝试的方案
+      description: 你已经尝试过哪些方案？
+      placeholder: "例如：1. 检查了 API Key 是否正确；2. 确认了网络连接；3. ..."
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 🖥️ 环境信息
+      description: 提供你的环境信息（有助于定位问题）
+      placeholder: |
+        - 操作系统：Windows 11
+        - Python 版本：3.13.12
+        - 项目版本：1.0.0
+        - API：Gemini
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📎 其他信息
+      description: 任何其他有助于解决问题的信息
+      placeholder: "例如：错误日志、截图等"
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✅ 确认
+      options:
+        - label: 我已阅读文档（README.md 和 SKILL.md），但没有找到答案
+          required: true
+        - label: 我已搜索现有的 Issue，确认这个问题没有被回答过
+          required: true
