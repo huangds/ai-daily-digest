@@ -1,0 +1,12 @@
+# AI Daily Digest - Python 依赖
+
+# 必需依赖
+requests>=2.31.0          # HTTP 请求，用于抓取 RSS
+
+# 可选依赖（使用外部 AI API 时需要）
+openai>=1.0.0             # OpenAI API 客户端（支持 Gemini、DeepSeek 等兼容接口）
+
+# 开发依赖（可选）
+# pytest>=7.0.0            # 单元测试
+# black>=23.0.0            # 代码格式化
+# flake8>=6.0.0            # 代码风格检查
